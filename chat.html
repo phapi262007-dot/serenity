@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat – Serenity</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="chat-page">
+
+    <!-- Subtle ambient background -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:8px;">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">Serenity</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="chat.html" class="nav-link active">Chat</a>
+            <!-- Reset button in nav -->
+            <button id="resetBtn" class="btn-reset" title="Reset Chat">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                    <path d="M3 3v5h5" />
+                </svg>
+                Reset
+            </button>
+        </div>
+    </nav>
+
+    <!-- Chat Container -->
+    <div class="chat-wrapper">
+        <!-- Sidebar mood panel -->
+        <aside class="mood-sidebar">
+            <div class="mood-panel">
+                <h3 class="mood-title">How are you feeling?</h3>
+                <p class="mood-subtitle">Tap a mood to start</p>
+                <div class="mood-chips">
+                    <button class="mood-chip" data-mood="sad">😢 Sad</button>
+                    <button class="mood-chip" data-mood="anxious">😰 Anxious</button>
+                    <button class="mood-chip" data-mood="angry">😠 Angry</button>
+                    <button class="mood-chip" data-mood="stressed">😓 Stressed</button>
+                    <button class="mood-chip" data-mood="happy">😊 Happy</button>
+                    <button class="mood-chip" data-mood="numb">😶 Numb</button>
+                    <button class="mood-chip" data-mood="lonely">💔 Lonely</button>
+                    <button class="mood-chip" data-mood="overwhelmed">🌊 Overwhelmed</button>
+                </div>
+            </div>
+
+            <div class="resource-panel">
+                <h4>📞 Crisis Resources</h4>
+                <ul>
+                    <li><strong>iCall (India):</strong> 9152987821</li>
+                    <li><strong>Vandrevala Foundation:</strong> 1860-2662-345</li>
+                    <li><strong>International:</strong> findahelpline.com</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <!-- Chat header -->
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="bot-avatar-lg">🌿</div>
+                    <div>
+                        <div class="bot-name-lg">Serenity</div>
+                        <div class="bot-status"><span class="status-dot"></span> Here for you, always</div>
+                    </div>
+                </div>
+                <div class="chat-header-actions">
+                    <div class="disclaimer-badge"
+                        title="This is not a medical professional. For serious concerns, please contact a licensed professional.">
+                        ⚠️ Not a therapist
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages area -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome message will be injected by JS -->
+            </div>
+
+            <!-- Typing indicator -->
+            <div class="typing-indicator" id="typingIndicator" style="display:none;">
+                <div class="typing-bubble">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <span class="typing-label">Serenity is typing…</span>
+            </div>
+
+            <!-- Input bar -->
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea id="userInput" class="chat-input" placeholder="Share how you're feeling…" rows="1"
+                        maxlength="500"></textarea>
+                    <button id="sendBtn" class="send-btn" aria-label="Send message">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                    </button>
+                </div>
+                <p class="input-disclaimer">
+                    ⚠️ This is not a medical professional. For serious concerns, please contact a licensed professional.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
